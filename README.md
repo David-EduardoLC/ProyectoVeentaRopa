@@ -21,7 +21,7 @@ Este proyecto Laravel implementa un sistema completo para la gestión de usuario
 El objetivo principal del sistema es demostrar cómo Laravel permite el desarrollo rápido y organizado de aplicaciones utilizando las mejores prácticas.
 
 ---
-## 🎯 Objetivo del Proyecto
+##  Objetivo del Proyecto
 
  - Autenticación con roles
  - CRUDs para usuarios y productos
@@ -104,7 +104,7 @@ crearUsuario(usuario: any): Observable<any> {
 
 ```
 ----
-## 👁️ Visualización de Usuarios 
+##  Visualización de Usuarios 
 
 
 CODIGO
@@ -332,7 +332,7 @@ Schema::create('productos', function (Blueprint $table) {
 
 
 ---
-## 🌐 Rutas: Conexión entre Componentes
+##  Rutas: Conexión entre Componentes
 
 FRONTEND (ANGULAR)
 
@@ -401,7 +401,7 @@ Route::delete('/productos/{id}', [ProductoController::class, 'destroy']); // Eli
 ```
 
 
-👤 Rutas con Usuarios (solo administrador)
+ Rutas con Usuarios (solo administrador)
 
 ```php
 Route::get('/usuarios', [UserController::class, 'index']);
@@ -411,7 +411,7 @@ Route::delete('/usuarios/{id}', [UserController::class, 'destroy']);
 
 ```
 
-👤 Rutas para Usuario Normal 
+ Rutas para Usuario Normal 
 
 ```php
 Route::middleware(['auth:sanctum'])->group(function () {
@@ -424,7 +424,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 ```
 
 
-🔐 Rutas protegidas
+ Rutas protegidas
 
 ```php
 Route::middleware(['auth:sanctum', 'role:admin'])->group(function () {
