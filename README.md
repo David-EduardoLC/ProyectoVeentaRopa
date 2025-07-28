@@ -1,7 +1,13 @@
-## Reporte LARAVEL: Sistema de Gestión de Usuarios y Productos
-equipo 11
+## Sistema de Punto de Venta Tienda-Ropa
 
-integrantes :
+
+<div align="center">
+López Cruz David Eduardo
+Salinas Montesinos Cintia Yadai
+Grupo: VSI
+Equipo: 11
+
+</div>
 
 ---
 ## Introducción
