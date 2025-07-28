@@ -2,9 +2,13 @@
 
 
 <div align="center">
-López Cruz David Eduardo
-Salinas Montesinos Cintia Yadai
+  integrantes
+López Cruz David Eduardo - Frontend
+  
+Salinas Montesinos Cintia Yadai - backend
+
 Grupo: VSI
+
 Equipo: 11
 
 </div>
@@ -23,6 +27,29 @@ El objetivo principal del sistema es demostrar cómo Laravel permite el desarrol
  - CRUDs para usuarios y productos
  - Consumo de API desde Angular
  - Buen diseño UI/UX y seguridad básica
+   
+---
+## Dependencias y Configuración
+
+Para ejecutar correctamente el proyecto, se recomienda contar con los siguientes requisitos:
+
+PHP: 8.2 o superior
+
+Composer: 2.x
+
+Base de datos: MySQL
+
+Servidor web: Apache 
+
+Framework: Laravel 12
+
+Sistema operativo recomendado: Linux, Windows 10+ o macOS
+
+Node.js y npm (solo si usas frontend con Vite/React/Vue):
+
+Node.js 18.x 
+
+npm 9.x o superior
 
 
 ---
