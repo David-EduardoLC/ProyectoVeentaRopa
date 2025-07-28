@@ -1,4 +1,6 @@
-Reporte LARAVEL: Sistema de Gestión de Usuarios y Productos
+## Reporte LARAVEL: Sistema de Gestión de Usuarios y Productos
+equipo 11
+integrantes 
 
 ---
 ## Introducción
