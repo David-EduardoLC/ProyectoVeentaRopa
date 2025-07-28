@@ -1,0 +1,36 @@
+<!-- Navbar corregida -->
+<div class="header navbar">
+  <div class="title">
+    <span class="highlight">Vibe</span>Wear Admin
+  </div>
+  <nav class="main-nav">
+    <a routerLink="/admin-inventario" routerLinkActive="active">Productos</a>
+    <a routerLink="/cambiar-estado" routerLinkActive="active">Pedidos</a>
+    <button class="btn-logout" (click)="cerrarSesion()">Cerrar sesión</button>
+  </nav>
+</div>
+
+
+
+<div class="admin-cambiar-estado">
+  <h2>Cambiar Estado del Pedido</h2>
+
+  <div class="form-group">
+    <label for="pedidoId">ID del Pedido:</label>
+    <input type="number" [(ngModel)]="pedidoId" id="pedidoId" placeholder="Ej. 23" />
+  </div>
+
+  <div class="form-group">
+    <label for="nuevoEstado">Nuevo Estado:</label>
+    <select [(ngModel)]="nuevoEstado" id="nuevoEstado">
+      <option value="preparacion">Preparación</option>
+      <option value="enviado">Enviado</option>
+      <option value="camino">En camino</option>
+      <option value="entregado">Entregado</option>
+    </select>
+  </div>
+
+  <button class="btn-actualizar" (click)="actualizarEstado()">Actualizar</button>
+
+  <p *ngIf="mensaje" class="mensaje">{{ mensaje }}</p>
+</div>

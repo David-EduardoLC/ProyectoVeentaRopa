@@ -1,0 +1,183 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: white;
+}
+
+.header {
+  background: #111;
+  color: white;
+  padding: 10px 20px;
+  position: relative;
+  text-align: center;
+  border-bottom: 3px solid #ff007a;
+}
+
+.search-bar {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+
+.search-bar input {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.top-links {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  display: flex;
+  gap: 15px;
+  font-size: 0.9rem;
+}
+
+.title {
+  font-size: 2.2rem;
+  margin: 15px 0 5px;
+  font-family: 'Segoe UI', cursive;
+}
+
+.highlight {
+  color: #ff6666;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 8px;
+  padding-bottom: 8px;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 4px 10px;
+  transition: color 0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: #ff007a;
+  border-bottom: 2px solid #ff007a;
+  cursor: pointer;
+}
+
+.banner {
+  position: relative;
+  text-align: center;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background: rgba(0,0,0,0.6);
+  padding: 20px 40px;
+  border-radius: 10px;
+}
+
+.ofertas {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.producto {
+  max-width: 320px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.etiqueta {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff4c4c;
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+}
+
+.producto img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.producto .desc {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 10px 0;
+}
+
+.valoracion {
+  color: #ffaa00;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.vendidos {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.precio {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.precio .antes {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.precio .ahora {
+  color: #ff007a;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+button {
+  background: black;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #333;
+}
+
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: 50px;
+}

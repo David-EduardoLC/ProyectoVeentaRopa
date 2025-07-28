@@ -1,0 +1,63 @@
+<header class="header">
+  <div class="search-bar">
+    <input type="text" placeholder="Buscar" />
+  </div>
+  <div class="top-links">
+    <span>My account</span>
+    <span>Support</span>
+    <span>Fav</span>
+    <span class="cart">🛒</span>
+  </div>
+  <h1 class="title">Online <span class="highlight">VibeWear</span> Shop</h1>
+  <nav class="main-nav">
+    <a routerLink="/inicio">Inicio</a>
+    <a routerLink="/categoria" class="active">Categoría</a>
+    <a routerLink="/carrito">Carrito</a>
+    <a routerLink="/oferta">Oferta</a>
+    <a routerLink="/seguimiento">Seguimiento</a>
+    <a routerLink="/mis-pedidos">Mis pedidos</a>
+    <a routerLink="/login">Sign out</a>
+  </nav>
+</header>
+
+<div class="mis-pedidos">
+  <h2>📦 Mis Pedidos</h2>
+
+  <p *ngIf="error" class="error">{{ error }}</p>
+
+  <ul *ngIf="pedidos.length > 0; else sinPedidos">
+    <li *ngFor="let pedido of pedidos">
+      <strong>Pedido #{{ pedido.id }}</strong> — Estado: {{ pedido.estado }}
+      <button (click)="abrirModal(pedido)">Ver pedido</button>
+    </li>
+  </ul>
+
+  <ng-template #sinPedidos>
+    <p>No tienes pedidos registrados.</p>
+  </ng-template>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" *ngIf="modalAbierto">
+  <div class="modal-content">
+  <h2>📄 Detalle del Pedido <span>#{{ pedidoSeleccionado?.id }}</span></h2>
+  <hr />
+  <p><strong>🕒 Estado:</strong> {{ pedidoSeleccionado?.estado }}</p>
+
+  <ul>
+    <li *ngFor="let item of pedidoSeleccionado?.productos">
+      🛍️ {{ item.cantidad }}x <span class="producto">{{ item.producto.nombre }}</span> — <span class="precio">${{ item.precio_unitario }}</span>
+    </li>
+  </ul>
+
+  <div class="modal-buttons">
+    <button class="btn cerrar" (click)="cerrarModal()">❌ Cerrar</button>
+    <a routerLink="/seguimiento" class="btn seguimiento">📍 Ir al seguimiento</a>
+  </div>
+</div>
+
+</div>
+
+<footer>
+  <p>© 2025 VibeWear Shop - Todos los derechos reservados</p>
+</footer>

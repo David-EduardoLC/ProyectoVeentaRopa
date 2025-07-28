@@ -1,0 +1,43 @@
+<header class="header">
+  <div class="search-bar">
+    <!-- Campo de búsqueda si lo deseas -->
+  </div>
+  <div class="top-links">
+    <span>My account</span>
+    <span>Support</span>
+    <span>Fav</span>
+    <span class="cart">🛒</span>
+  </div>
+  <h1 class="title">Online <span class="highlight">VibeWear</span> Shop</h1>
+  <nav class="main-nav">
+    <a routerLink="/inicio" routerLinkActive="active">Inicio</a>
+    <a routerLink="/categoria" routerLinkActive="active">Categoría</a>
+    <a routerLink="/carrito" routerLinkActive="active">Carrito</a>
+    <a routerLink="/oferta" routerLinkActive="active">Oferta</a>
+    <a routerLink="/seguimiento" routerLinkActive="active">Seguimiento</a>
+    <a routerLink="/mis-pedidos">Mis pedidos</a>
+    <a (click)="cerrarSesion()">Sign out</a>
+  </nav>
+
+  <h2 class="titulo">Colección de {{ tipo | titlecase }}</h2>
+</header>
+
+<main class="categoria-container">
+  <div class="productos-grid">
+    <div class="producto" *ngFor="let producto of productos">
+      <div class="imagen-container">
+        <img [src]="producto.imagen" [alt]="producto.nombre" />
+        <div class="descuento" *ngIf="producto.oferta">
+          -{{ calcularDescuento(producto.precio, producto.oferta) }}%
+        </div>
+      </div>
+      <h3>{{ producto.nombre }}</h3>
+      <p class="descripcion">{{ producto.descripcion }}</p>
+      <p class="precio">
+        <span *ngIf="producto.oferta" class="precio-anterior">${{ producto.precio }}</span>
+        <span class="precio-final">${{ producto.oferta || producto.precio }}</span>
+      </p>
+      <button class="btn-carrito" (click)="agregarAlCarrito(producto)">Añadir al carrito</button>
+    </div>
+  </div>
+</main>

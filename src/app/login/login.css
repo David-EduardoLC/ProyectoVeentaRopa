@@ -1,0 +1,112 @@
+/* Estilo dividido */
+.login-container-full {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.login-image {
+  flex: 1;
+  background-image: url('../../assets2/img/login/login.jpg'); /* Actualiza con tu imagen de tienda */
+  background-size: cover;
+  background-position: center;
+}
+
+.login-panel {
+  flex: 1;
+  background: linear-gradient(to bottom, #ffe0e0, #f9a3bd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-content {
+  width: 80%;
+  max-width: 400px;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #d6457b;
+  margin-bottom: 10px;
+}
+
+.slogan {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+.password-field {
+  position: relative;
+}
+
+.password-field button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.checkbox-container input {
+  margin-right: 8px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #ff007a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #e6006f;
+}
+
+.register-link {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.register-link a {
+  color: #d90068;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.error {
+  color: #e60000;
+  margin-top: 10px;
+}

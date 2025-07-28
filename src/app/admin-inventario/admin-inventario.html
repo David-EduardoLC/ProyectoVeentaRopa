@@ -1,0 +1,95 @@
+<!-- Navbar corregida -->
+<div class="header navbar">
+  <div class="title">
+    <span class="highlight">Vibe</span>Wear Admin
+  </div>
+  <nav class="main-nav">
+    <a routerLink="/admin-inventario" routerLinkActive="active">Productos</a>
+    <a routerLink="/cambiar-estado" routerLinkActive="active">Pedidos</a>
+    <button class="btn-logout" (click)="cerrarSesion()">Cerrar sesión</button>
+  </nav>
+</div>
+
+
+
+<!-- Inventario de productos -->
+<div class="admin-inventario">
+  <h2>Inventario de Productos</h2>
+  <button class="btn-agregar" (click)="abrirModalAgregar()">Agregar producto</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Imagen</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Oferta</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <td data-label="ID">{{ producto.id }}</td>
+        <td data-label="Nombre">{{ producto.nombre }}</td>
+        <td data-label="Imagen">
+          <img [src]="producto.imagen" alt="imagen" class="mini-img" onerror="this.src='assets/img/no-image.png'">
+        </td>
+        <td data-label="Precio">${{ producto.precio }}</td>
+        <td data-label="Stock">{{ producto.stock }}</td>
+        <td data-label="Oferta">{{ producto.oferta == 1 ? 'Sí' : 'No' }}</td>
+        <td data-label="Editar">
+          <button (click)="abrirModal(producto)">
+            <i class="fa-solid fa-pen-to-square"></i> Editar
+          </button>
+        </td>
+        <td data-label="Eliminar">
+          <button (click)="eliminarProducto(producto.id)">
+            <i class="fa-solid fa-trash"></i> Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal -->
+  <div class="modal-overlay" *ngIf="modalAbierto">
+    <div class="modal-content">
+      <h3>{{ productoSeleccionado?.id ? 'Editar' : 'Agregar' }} Producto #{{ productoSeleccionado?.id || '' }}</h3>
+
+      <label>Nombre:</label>
+      <input [(ngModel)]="productoSeleccionado.nombre" type="text">
+
+      <label>Descripción:</label>
+      <textarea [(ngModel)]="productoSeleccionado.descripcion" rows="3"></textarea>
+
+      <label>Imagen (URL):</label>
+      <input [(ngModel)]="productoSeleccionado.imagen" type="text">
+
+      <label>Precio:</label>
+      <input [(ngModel)]="productoSeleccionado.precio" type="number">
+
+      <label>Stock:</label>
+      <input [(ngModel)]="productoSeleccionado.stock" type="number">
+
+      <label>Categoría:</label>
+      <select [(ngModel)]="productoSeleccionado.categoria">
+        <option value="hombre">Hombre</option>
+        <option value="mujer">Mujer</option>
+      </select>
+
+      <label>Oferta:</label>
+      <select [(ngModel)]="productoSeleccionado.oferta">
+        <option [ngValue]="1">Sí</option>
+        <option [ngValue]="0">No</option>
+      </select>
+
+      <div class="modal-buttons">
+        <button (click)="guardarCambios()">Guardar</button>
+        <button (click)="cerrarModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>

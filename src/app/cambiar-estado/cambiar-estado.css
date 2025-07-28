@@ -1,0 +1,136 @@
+/* === NAVBAR ESTILO VIBEWEAR === */
+.header.navbar {
+  background: #111;
+  color: white;
+  padding: 10px 20px;
+  border-bottom: 3px solid #ff007a;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.2rem;
+  margin: 10px 0 0;
+  font-family: 'Segoe UI', cursive;
+}
+
+.highlight {
+  color: #ff007a;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 8px;
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  font-size: 16px;
+  transition: color 0.3s ease, border 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active,
+.main-nav a.router-link-active {
+  color: #ff007a;
+  border-bottom: 2px solid #ff007a;
+}
+
+/* === Botón Cerrar Sesión === */
+.btn-logout {
+  background-color: #ff007a;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-logout:hover {
+  background-color: #cc005f;
+}
+
+.admin-estado-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.admin-estado-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #111;
+  border-bottom: 2px solid #ff007a;
+  padding-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #ff007a;
+  outline: none;
+}
+
+.btn-actualizar {
+  background-color: #ff007a;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-actualizar:hover {
+  background-color: #cc005f;
+}
+
+.mensaje {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #28a745;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mensaje::before {
+  content: '✅';
+  font-size: 18px;
+}

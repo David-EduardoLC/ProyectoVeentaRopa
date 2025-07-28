@@ -1,0 +1,25 @@
+<div class="registro-form">
+  <h2>Crear cuenta</h2>
+
+  <input [(ngModel)]="nombre" placeholder="Nombre completo" />
+  <input [(ngModel)]="email" placeholder="Correo electrónico" type="email" />
+
+  <div class="password-field">
+    <input
+      [(ngModel)]="password"
+      [type]="mostrarPassword ? 'text' : 'password'"
+      placeholder="Contraseña"
+    />
+    <button type="button" (click)="mostrarPassword = !mostrarPassword" class="toggle-ojito">
+      {{ mostrarPassword ? '🙈' : '👁️' }}
+    </button>
+  </div>
+
+  <button (click)="registrar()">Registrarse</button>
+
+  <p *ngIf="mensaje">{{ mensaje }}</p>
+
+  <div class="volver-login">
+    ¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a>
+  </div>
+</div>

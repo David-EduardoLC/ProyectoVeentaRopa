@@ -1,0 +1,38 @@
+<header class="header navbar">
+  <h1 class="title">Online <span class="highlight">VibeWear</span> Shop</h1>
+  <nav class="main-nav">
+    <a routerLink="/inicio">Inicio</a>
+    <a routerLink="/categoria">Categoría</a>
+    <a routerLink="/carrito" class="active">Carrito</a>
+    <a routerLink="/oferta">Oferta</a>
+    <a routerLink="/seguimiento">Seguimiento</a>
+    <a routerLink="/mis-pedidos">Mis pedidos</a>
+    <a routerLink="/login">Salir</a>
+  </nav>
+</header>
+
+<div class="seguimiento-container" *ngIf="pedido">
+  <h2>📦 Seguimiento del Pedido</h2>
+  <p><strong>Código:</strong> PED{{ pedido.id }}</p>
+  <p><strong>Estado actual:</strong> {{ pedido.estado }}</p>
+
+  <!-- Barra de progreso -->
+  <div class="progreso">
+    <div [class.active]="['preparacion','enviado','camino','entregado'].includes(pedido.estado)">🛠 En preparación</div>
+    <div [class.active]="['enviado','camino','entregado'].includes(pedido.estado)">📦 Enviado</div>
+    <div [class.active]="['camino','entregado'].includes(pedido.estado)">🚚 En camino</div>
+    <div [class.active]="pedido.estado === 'entregado'">✅ Entregado</div>
+  </div>
+
+  <!-- Productos -->
+  <div class="productos-seguimiento">
+    <h3>Productos del pedido</h3>
+    <ul>
+      <li *ngFor="let item of pedido.productos">
+        {{ item.cantidad }}x {{ item.producto.nombre }} — ${{ item.precio_unitario }}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<p *ngIf="error" class="error">{{ error }}</p>

@@ -1,0 +1,37 @@
+<header class="header">
+  <div class="search-bar">
+    <input type="text" placeholder="Buscar" />
+  </div>
+  <div class="top-links">
+    <span>My account</span>
+    <span>Support</span>
+    <span>Fav</span>
+    <span class="cart">🛒</span>
+  </div>
+  <h1 class="title">Online <span class="highlight">VibeWear</span> Shop</h1>
+  <nav class="main-nav">
+    <a routerLink="/inicio">Inicio</a>
+    <a routerLink="/categoria" class="active">Categoría</a>
+    <a routerLink="/carrito">Carrito</a>
+    <a routerLink="/oferta">Oferta</a>
+    <a routerLink="/seguimiento">Seguimiento</a>
+    <a routerLink="/mis-pedidos">Mis pedidos</a>
+    <a routerLink="/login">Sign out</a>
+  </nav>
+</header>
+
+<main class="categoria">
+  <section class="colecciones">
+    <div class="coleccion">
+      <h3>Hombre</h3>
+      <img src="/assets/img/categoria/Hombre.jpeg" alt="hombre">
+      <button [routerLink]="['/categoria', 'hombre']">Ver colección</button>
+    </div>
+
+    <div class="coleccion">
+      <h3>Mujer</h3>
+      <img src="/assets/img/categoria/Mujer.jpeg" alt="mujer">
+      <button [routerLink]="['/categoria', 'mujer']">Ver colección</button>
+    </div>
+  </section>
+</main>

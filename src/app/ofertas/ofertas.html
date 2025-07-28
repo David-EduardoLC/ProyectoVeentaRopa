@@ -1,0 +1,36 @@
+<header class="header">
+  <div class="search-bar">
+    <input type="text" placeholder="Buscar" />
+  </div>
+  <div class="top-links">
+    <span>My account</span>
+    <span>Support</span>
+    <span>Fav</span>
+    <span class="cart">🛒</span>
+  </div>
+  <h1 class="title">Online <span class="highlight">VibeWear</span> Shop</h1>
+  <nav class="main-nav">
+    <a routerLink="/inicio">Inicio</a>
+    <a routerLink="/categoria">Categoría</a>
+    <a routerLink="/carrito">Carrito</a>
+    <a routerLink="/oferta" class="active">Oferta</a>
+    <a routerLink="/seguimiento">Seguimiento</a>
+    <a routerLink="/mis-pedidos">Mis pedidos</a>
+    <a routerLink="/login">Sign out</a>
+  </nav>
+</header>
+<main class="ofertas">
+  <div *ngFor="let producto of productosEnOferta" class="producto">
+    <div class="etiqueta">-{{ calcularDescuento(producto.precio, producto.oferta) }}%</div>
+    <img [src]="producto.imagen" [alt]="producto.nombre" />
+    <h3>{{ producto.nombre }}</h3>
+    <p class="desc">{{ producto.descripcion }}</p>
+    <div class="valoracion">⭐ ⭐ ⭐ ⭐ ⭐</div>
+    <p class="vendidos">{{ producto.vendidos }} vendidos</p>
+    <div class="precio">
+      <span class="OFERTA">${{ producto.oferta }}</span>
+      <span class="ANTES">${{ producto.precio }}</span>
+    </div>
+    <button (click)="agregarAlCarrito(producto)">Añadir al carrito</button>
+  </div>
+</main>

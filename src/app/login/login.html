@@ -1,0 +1,34 @@
+<div class="login-container-full">
+  <div class="login-image"></div>
+
+  <div class="login-panel">
+    <div class="login-content">
+      <h2>VibeWear</h2>
+      <p class="slogan">“Moda rápida, estilo eterno”</p>
+
+      <input type="email" [(ngModel)]="email" placeholder="Ingresa tu email" required />
+
+      <div class="password-field">
+        <input
+          [type]="hidePassword ? 'password' : 'text'"
+          [(ngModel)]="password"
+          placeholder="Contraseña"
+          required
+        />
+      </div>
+
+      <div class="checkbox-container">
+        <input type="checkbox" id="rememberMe">
+        <label for="rememberMe">Acuérdate de mí</label>
+      </div>
+
+      <button class="login-btn" (click)="login()">Iniciar sesión</button>
+
+      <p *ngIf="error" class="error">{{ error }}</p>
+
+      <div class="register-link">
+        ¿No tienes cuenta? <a [routerLink]="['/registro']">Regístrate</a>
+      </div>
+    </div>
+  </div>
+</div>
