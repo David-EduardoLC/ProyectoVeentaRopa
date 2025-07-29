@@ -10,6 +10,8 @@ import { SeguimientoComponent } from './seguimiento/seguimiento';
 import { MisPedidosComponent } from './mis-pedidos/mis-pedidos';
 import { AdminInventarioComponent } from './admin-inventario/admin-inventario.component';
 import { CambiarEstadoComponent } from './cambiar-estado/cambiar-estado.component';
+import { CorreoFormComponent } from './correo/correo.component';
+import { CorreoService } from './services/correo.service';
 
 
 export const routes: Routes = [
@@ -25,4 +27,6 @@ export const routes: Routes = [
   {path : 'mis-pedidos', component: MisPedidosComponent},
   {path: 'admin-inventario', component: AdminInventarioComponent },
   {path: 'cambiar-estado', component: CambiarEstadoComponent },
+  {path: 'correo', component: CorreoFormComponent },
+  {path: 'correo-form', component: CorreoFormComponent, providers: [CorreoService] } // Aseguramos que el servicio esté disponible en esta ruta
 ];

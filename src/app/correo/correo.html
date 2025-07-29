@@ -1,0 +1,19 @@
+<div class="correo-form">
+  <h2>Enviar confirmación de compra</h2>
+
+  <label>Nombre:</label>
+  <input type="text" [(ngModel)]="nombre" />
+
+  <label>ID del pedido:</label>
+  <input type="number" [(ngModel)]="pedido_id" />
+
+  <label>Total:</label>
+  <input type="number" [(ngModel)]="total" />
+
+  <label>Correo electrónico:</label>
+  <input type="email" [(ngModel)]="email" />
+
+  <button (click)="enviarCorreo()">Enviar correo</button>
+
+  <p *ngIf="mensaje">{{ mensaje }}</p>
+</div>

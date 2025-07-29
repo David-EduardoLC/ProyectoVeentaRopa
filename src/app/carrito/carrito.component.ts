@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
 import { CarritoService } from './carrito.service';
 import { PedidoService } from '../services/pedido';
+import { CorreoService } from '../services/correo.service'; // Asegúrate de que la ruta sea correcta
 
 @Component({
   selector: 'app-carrito',
@@ -25,6 +26,7 @@ export class CarritoComponent implements OnInit {
   constructor(
     private carritoService: CarritoService,
     private pedidoService: PedidoService,
+    private correoService: CorreoService,
     private router: Router
   ) {}
 
@@ -67,6 +69,27 @@ export class CarritoComponent implements OnInit {
       next: (pedido: any) => {
         this.carritoService.vaciar();
         this.carrito = [];
+
+        const usuario = JSON.parse(localStorage.getItem('user') || '{}');
+
+        const datosCorreo = {
+          nombre: usuario.name,
+          email: usuario.email,
+          pedido_id: pedido.id,
+          total: pedido.total
+        };
+
+        console.log('📤 Enviando correo con:', datosCorreo);
+
+        this.correoService.enviarCorreo(datosCorreo).subscribe({
+          next: () => {
+            console.log('✅ Correo enviado correctamente');
+          },
+          error: (error) => {
+            console.error('❌ Error al enviar correo:', error);
+            alert('❌ No se pudo enviar el correo. Revisa los datos del usuario o del pedido.');
+          }
+        });
 
         localStorage.setItem('pedidoId', pedido.id);
         this.router.navigate(['/seguimiento']);
